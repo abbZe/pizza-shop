@@ -10,6 +10,9 @@ export const sortList = [
 ];
 
 const Sort = () => {
+  // REFS
+  const sortRef = React.useRef();
+
   // GLOBAL STATE
   const dispatch = useDispatch();
   const sort = useSelector((state) => state.filterSlice.sort);
@@ -24,9 +27,24 @@ const Sort = () => {
     setIsOpen(false);
   };
 
+  //EFFECT
+  // close popup when clicking outside the sort
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.composedPath().includes(sortRef.current)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.body.addEventListener("click", handleClickOutside);
+
+    // remove listener when unmount
+    return () => document.body.removeEventListener("click", handleClickOutside);
+  }, []);
+
   // RENDER
   return (
-    <div className="sort">
+    <div className="sort" ref={sortRef}>
       <div className="sort__label">
         <b>Сортировка по:</b>
         <span onClick={() => setIsOpen(!isOpen)}>{sort.name}</span>

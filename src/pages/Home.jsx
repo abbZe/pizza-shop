@@ -60,8 +60,9 @@ const Home = () => {
       const sort = sortList.find((obj) => obj.sortProp === params.sortProp);
 
       dispatch(setFilters({ ...params, sort }));
-      isSearch.current = true;
     }
+
+    isSearch.current = true;
   }, []);
 
   const fetchPizzas = () => {
