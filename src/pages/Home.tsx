@@ -3,10 +3,6 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import qs from "qs"
 
-import Categories from "../components/Categories"
-import Sort, { sortList } from "../components/Sort"
-import Skeleton from "../components/PizzaBlock/Skeleton"
-import PizzaBlock from "../components/PizzaBlock/Index"
 import Pagination from "../Pagination/Index"
 import {
     setCategoryId,
@@ -18,6 +14,8 @@ import { useAppDispatch } from "../redux/store"
 import { selectFilter } from "../redux/filter/selectors"
 import { selectSearch } from "../redux/search/selectors"
 import { selectPizza } from "../redux/pizza/selectors"
+import { Categories, PizzaBlock, Sort, sortList } from "../components"
+import { Skeleton } from "../components/PizzaBlock/Skeleton"
 
 const Home: React.FC = () => {
     const navigate = useNavigate()

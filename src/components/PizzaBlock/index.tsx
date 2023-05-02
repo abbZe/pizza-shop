@@ -14,7 +14,7 @@ type PizzaBlockProps = {
     id: string
 }
 
-const Index: React.FC<PizzaBlockProps> = ({
+export const PizzaBlock: React.FC<PizzaBlockProps> = ({
     price,
     title,
     imageUrl,
@@ -112,5 +112,3 @@ const Index: React.FC<PizzaBlockProps> = ({
         </>
     )
 }
-
-export default Index

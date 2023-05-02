@@ -1,11 +1,11 @@
 import React from "react"
-import Index from "../components/Header"
 import { Outlet } from "react-router-dom"
+import { Header } from "../components"
 
 const MainLayout: React.FC = () => {
     return (
         <div className="wrapper">
-            <Index />
+            <Header />
             <div className="content">
                 <Outlet />
             </div>

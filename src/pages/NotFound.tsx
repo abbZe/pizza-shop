@@ -1,11 +1,14 @@
 import React from "react"
 
-import NotFoundBlock from "../components/NotFoundBlock/Index"
+import { NotFoundBlock } from "../components"
+import { Link } from "react-router-dom"
 
 const NotFound: React.FC = () => (
     <>
         <NotFoundBlock />
-        <button>Назад</button>
+        <Link to="/">
+            <button>Назад</button>
+        </Link>
     </>
 )
 

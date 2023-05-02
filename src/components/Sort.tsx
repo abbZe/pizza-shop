@@ -15,7 +15,7 @@ export const sortList: SortListItem[] = [
     { name: "алфавиту", sortProp: "title" },
 ]
 
-const Sort: React.FC = () => {
+export const Sort: React.FC = () => {
     // REFS
     const sortRef = useRef<HTMLDivElement>(null)
 
@@ -82,5 +82,3 @@ const Sort: React.FC = () => {
         </div>
     )
 }
-
-export default Sort

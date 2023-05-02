@@ -7,7 +7,7 @@ type CategoriesProps = {
     onClickCategory: (index: number) => void
 }
 
-const Categories: React.FC<CategoriesProps> = React.memo(
+export const Categories: React.FC<CategoriesProps> = React.memo(
     ({ categoryId, onClickCategory }) => {
         // EXPORT ARRAY OF CATEGORIES FROM STATE
         const { categories } = useSelector(selectFilter)
@@ -29,5 +29,3 @@ const Categories: React.FC<CategoriesProps> = React.memo(
         )
     }
 )
-
-export default Categories

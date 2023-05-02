@@ -8,7 +8,7 @@ import eraseIcon from "../../assets/erase_icon.svg"
 import { setSearchValue } from "../../redux/search/slice"
 import { selectSearch } from "../../redux/search/selectors"
 
-const Search: React.FC = () => {
+export const Search: React.FC = () => {
     // LOCAL STATE
     const [value, setValue] = useState<string>("")
 
@@ -69,5 +69,3 @@ const Search: React.FC = () => {
         </div>
     )
 }
-
-export default Search

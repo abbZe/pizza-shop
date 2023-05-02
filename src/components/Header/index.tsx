@@ -1,14 +1,14 @@
-import { useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { useSelector } from "react-redux"
 
 import styles from "./Header.module.scss"
 import pizzaLogo from "../../assets/img/pizza-logo.svg"
 import cartIcon from "../../assets/cart_icon.svg"
-import Search from "../Search/Index"
 import { selectCart } from "../../redux/cart/selectors"
+import { Search } from "../index"
 
-const Index: React.FC = () => {
+export const Header: React.FC = () => {
     const { totalPrice, items } = useSelector(selectCart)
     const { pathname } = useLocation()
     const totalCount = items.reduce(
@@ -58,5 +58,3 @@ const Index: React.FC = () => {
         </div>
     )
 }
-
-export default Index
