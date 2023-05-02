@@ -1,4 +1,4 @@
-import { SortProp } from "./slice.js"
+import { SortProp } from "./slice.js.js"
 
 export type SortType = {
     name: string

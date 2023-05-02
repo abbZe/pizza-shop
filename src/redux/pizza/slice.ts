@@ -1,19 +1,8 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
-import { RootState } from "../../store"
+import { RootState } from "../store"
 import { IPizzaSliceState, TPizzaItem } from "./types"
-
-export const fetchPizzas = createAsyncThunk<
-    TPizzaItem[],
-    Record<string, string>
->("pizza/fetchPizzasStatus", async params => {
-    const { url, currentPage, category, sortType, search } = params
-    const { data } = await axios.get<TPizzaItem[]>(
-        `${url}?page=${currentPage}&limit=4&${category}&sortBy=${sortType}&order=desc${search}`
-    )
-
-    return data
-})
+import { fetchPizzas } from "./asyncActions"
 
 export enum Status {
     LOADING = "loading",

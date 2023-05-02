@@ -12,12 +12,12 @@ import {
     setCategoryId,
     setCurrentPage,
     setFilters,
-} from "../redux/slices/filter/slice.js"
-import { fetchPizzas } from "../redux/slices/pizza/slice"
+} from "../redux/filter/slice.js"
+import { fetchPizzas } from "../redux/pizza/asyncActions"
 import { useAppDispatch } from "../redux/store"
-import { selectFilter } from "../redux/slices/filter/selectors"
-import { selectSearch } from "../redux/slices/search/selectors"
-import { selectPizza } from "../redux/slices/pizza/selectors"
+import { selectFilter } from "../redux/filter/selectors"
+import { selectSearch } from "../redux/search/selectors"
+import { selectPizza } from "../redux/pizza/selectors"
 
 const Home: React.FC = () => {
     const navigate = useNavigate()

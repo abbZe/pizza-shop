@@ -1,22 +1,24 @@
 import { Route, Routes } from "react-router-dom"
-import React from "react"
+import React, { lazy, Suspense } from "react"
 
 import "./scss/app.scss"
-import Home from "./pages/Home"
-import NotFound from "./pages/NotFound"
-import Cart from "./pages/Cart"
-import FullPizza from "./pages/FullPizza"
 import MainLayout from "./layouts/MainLayout"
 
+const Home = lazy(() => import("./pages/Home"))
+const Cart = lazy(() => import("./pages/Cart"))
+const FullPizza = lazy(() => import("./pages/FullPizza"))
+const NotFound = lazy(() => import("./pages/NotFound"))
 const App: React.FC = () => (
-    <Routes>
-        <Route path="/" element={<MainLayout />}>
-            <Route path="" element={<Home />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="pizza/:id" element={<FullPizza />} />
-            <Route path="*" element={<NotFound />} />
-        </Route>
-    </Routes>
+    <Suspense fallback={<div>Идет загрузка</div>}>
+        <Routes>
+            <Route path="/" element={<MainLayout />}>
+                <Route path="" element={<Home />} />
+                <Route path="cart" element={<Cart />} />
+                <Route path="pizza/:id" element={<FullPizza />} />
+                <Route path="*" element={<NotFound />} />
+            </Route>
+        </Routes>
+    </Suspense>
 )
 
 export default App

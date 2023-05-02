@@ -6,7 +6,7 @@ import styles from "./Header.module.scss"
 import pizzaLogo from "../../assets/img/pizza-logo.svg"
 import cartIcon from "../../assets/cart_icon.svg"
 import Search from "../Search/Index"
-import { selectCart } from "../../redux/slices/cart/selectors"
+import { selectCart } from "../../redux/cart/selectors"
 
 const Index: React.FC = () => {
     const { totalPrice, items } = useSelector(selectCart)

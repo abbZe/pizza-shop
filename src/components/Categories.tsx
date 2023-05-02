@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import { selectFilter } from "../redux/slices/filter/selectors"
+import { selectFilter } from "../redux/filter/selectors"
 
 type CategoriesProps = {
     categoryId: number

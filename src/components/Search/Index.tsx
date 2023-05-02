@@ -5,8 +5,8 @@ import debounce from "lodash.debounce"
 import styles from "./Search.module.scss"
 import searchIcon from "../../assets/search_icon.svg"
 import eraseIcon from "../../assets/erase_icon.svg"
-import { setSearchValue } from "../../redux/slices/search/slice"
-import { selectSearch } from "../../redux/slices/search/selectors"
+import { setSearchValue } from "../../redux/search/slice"
+import { selectSearch } from "../../redux/search/selectors"
 
 const Search: React.FC = () => {
     // LOCAL STATE
